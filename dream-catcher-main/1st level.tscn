@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cmulk25k3lajw"]
 
+[ext_resource type="PackedScene" uid="uid://xf7t6sietjr8" path="res://text_box.tscn" id="1_i8n5i"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bhgy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhgy2"]
@@ -50,3 +52,5 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_i8n5i")
 text = "HE'S DREAMING!"
+
+[node name="TextBox" parent="." unique_id=673858522 instance=ExtResource("1_i8n5i")]
