@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2h7lr4ivrpvo"
-path="res://.godot/imported/background.jpg-79b88fb6fb9ac2ea3dfbdde6ce8e779f.ctex"
+uid="uid://bxkp884v34ukf"
+path="res://.godot/imported/background.png-2461e5613ed709cfa9ca60f560ee68c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://background.jpg"
-dest_files=["res://.godot/imported/background.jpg-79b88fb6fb9ac2ea3dfbdde6ce8e779f.ctex"]
+source_file="res://dreamCatcher-main/background.png"
+dest_files=["res://.godot/imported/background.png-2461e5613ed709cfa9ca60f560ee68c5.ctex"]
 
 [params]
 
