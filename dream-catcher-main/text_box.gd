@@ -7,6 +7,8 @@ signal advance
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#self.show()
+	
+
 	$family_photo.hide()
 	$background.show()
 	await talk("Ricky", "hey.. I'm Ricky.")
@@ -18,8 +20,9 @@ func _ready() -> void:
 	await talk("Ricky", "However, I wouldn't know as I have been stuck in my bed...")
 	await talk("Ricky", "unable to move past the door and see the world living outside the walls.")
 	$ricky.texture = load("res://ricky_smile.png")
+
 	await talk("Ricky", "My life had been going great before though. I had been working at SuperMart for a year.")
-	await talk("Ricky", "Every night I came home from my shift, my mom would come back from working at the restuarant.")
+	await talk("Ricky", "Every night I came home from my shift, my mom would come back from working at the police station.")
 	await talk("Ricky", "Her hands would always be holding a freshly baked chicken pot pie. Literally, my favorite.")
 	await talk("Ricky", "Though, that was all before I had these...")
 	$ricky.texture = load("res://ricky_ok_n.png")
@@ -27,7 +30,10 @@ func _ready() -> void:
 	await talk("Ricky", "They make me wonder, what parts of my life are real")
 	await talk("Ricky", "and what parts were just all in my dreams.")
 	$background.show()
-	await wait(5.0)
+	
+	await wait(3.0)
+	$background.texture = load("res://hi_bunny.png")
+	await wait(3.0)
 	$ricky.texture= load("res://bunny_stare.png")
 	$bunny_noise.play()
 	await talk("Bunny", "*bunny noises*")
@@ -37,6 +43,7 @@ func _ready() -> void:
 	await talk("Ricky", "wait")
 	$ricky.texture= load("res://ricky_wow.png")
 	await talk("Ricky", "When did I get a pet bunny? Is this a dream?")
+	
 	
 	
 	
@@ -54,6 +61,8 @@ func _process(delta: float) -> void:
 	
 func talk(name: String, message: String):
 	self.show()
+	$image.show()
+	$ricky.show()
 	animation.play("typing")
 	display_name = name
 	$Message.text = message
@@ -61,8 +70,10 @@ func talk(name: String, message: String):
 	await wait(2.0)
 	await advance
 	
-	self.hide()
 	display_name = ""
+	$Message.text = ""
+	$image.hide()
+	$ricky.hide()
 	#print("debug")
 	
 func wait(seconds: float) -> void:

@@ -3,6 +3,21 @@
 [ext_resource type="Script" uid="uid://co2rjo58hhcsj" path="res://1_st_level.gd" id="1_i8n5i"]
 [ext_resource type="AudioStream" uid="uid://31w068ko5fmx" path="res://851418__gregorquendel__atmospheric-space-bells-soundscape.mp3" id="2_nfjfu"]
 [ext_resource type="PackedScene" uid="uid://d0j40aap4ruua" path="res://text_box.tscn" id="3_hc3b0"]
+[ext_resource type="Script" uid="uid://s250uuhrupg1" path="res://v_box_container.gd" id="4_qwavt"]
+[ext_resource type="FontFile" uid="uid://bd2wlqscdnh7y" path="res://VCR_OSD_MONO_1.001.ttf" id="5_6dghv"]
+[ext_resource type="Script" uid="uid://bcilvdlisr81v" path="res://correct_answer.gd" id="6_jeuuk"]
+[ext_resource type="Script" uid="uid://bn53d8prohncj" path="res://wrong_answer.gd" id="7_irbkk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8n5i"]
+bg_color = Color(0.4092, 0.66, 0.58475995, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 10.0
+expand_margin_top = 12.0
+expand_margin_right = 10.0
+expand_margin_bottom = 12.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhgy2"]
 bg_color = Color(0.78, 0.5772, 0.468, 1)
@@ -16,21 +31,6 @@ expand_margin_top = 12.0
 expand_margin_right = 10.0
 expand_margin_bottom = 12.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8n5i"]
-bg_color = Color(0.4092, 0.66, 0.58475995, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-expand_margin_left = 10.0
-expand_margin_top = 12.0
-expand_margin_right = 10.0
-expand_margin_bottom = 12.0
-
-[sub_resource type="GDScript" id="GDScript_i8n5i"]
-script/source = "extends Button
-"
-
 [node name="1StLevel" type="Node2D" unique_id=146290594]
 script = ExtResource("1_i8n5i")
 
@@ -38,25 +38,41 @@ script = ExtResource("1_i8n5i")
 stream = ExtResource("2_nfjfu")
 autoplay = true
 
+[node name="TextBox" parent="." unique_id=673858522 instance=ExtResource("3_hc3b0")]
+position = Vector2(1, -4)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1944076997]
-offset_left = 57.0
-offset_top = 466.0
-offset_right = 393.0
-offset_bottom = 610.0
+offset_left = 108.0
+offset_top = 497.0
+offset_right = 437.0
+offset_bottom = 641.0
+scale = Vector2(0.56000125, 0.56)
+theme_override_constants/separation = 60
+script = ExtResource("4_qwavt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=324227245]
+offset_left = 324.00003
+offset_top = 532.0
+offset_right = 911.0
+offset_bottom = 574.0
+scale = Vector2(0.72, 0.71999514)
 theme_override_constants/separation = 60
 
-[node name="Wrong_Answer" type="Button" parent="VBoxContainer" unique_id=2031849925]
+[node name="Correct_Answer" type="Button" parent="HBoxContainer" unique_id=1316160217]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_bhgy2")
-text = "HE'S A 100% AWAKE"
-
-[node name="Correct_Answer" type="Button" parent="VBoxContainer" unique_id=1316160217]
-layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6dghv")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_i8n5i")
 text = "HE'S DREAMING!"
-script = SubResource("GDScript_i8n5i")
+script = ExtResource("6_jeuuk")
 
-[node name="TextBox" parent="." unique_id=673858522 instance=ExtResource("3_hc3b0")]
-position = Vector2(1, -4)
+[node name="Wrong_Answer" type="Button" parent="HBoxContainer" unique_id=2031849925]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6dghv")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhgy2")
+text = "HE'S A 100% AWAKE"
+script = ExtResource("7_irbkk")
+
+[connection signal="pressed" from="HBoxContainer/Correct_Answer" to="." method="_on_correct_answer_pressed"]
+[connection signal="pressed" from="HBoxContainer/Wrong_Answer" to="." method="_on_wrong_answer_pressed"]

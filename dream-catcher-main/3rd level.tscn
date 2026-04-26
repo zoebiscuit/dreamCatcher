@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://bcu5y8upkkkvs"]
+[gd_scene format=3 uid="uid://m84e1v4food1"]
 
-[ext_resource type="Script" uid="uid://fvdw8734u36p" path="res://2_nd_level.gd" id="1_iyrrg"]
-[ext_resource type="PackedScene" uid="uid://d0j40aap4ruua" path="res://text_box.tscn" id="1_xra66"]
-[ext_resource type="Script" uid="uid://dinegbik06q7o" path="res://text_box2.gd" id="2_iyrrg"]
-[ext_resource type="FontFile" uid="uid://bd2wlqscdnh7y" path="res://VCR_OSD_MONO_1.001.ttf" id="4_ebuch"]
-[ext_resource type="Script" uid="uid://bcilvdlisr81v" path="res://correct_answer.gd" id="5_qwsm5"]
-[ext_resource type="Script" uid="uid://bn53d8prohncj" path="res://wrong_answer.gd" id="6_3dj7h"]
+[ext_resource type="Script" uid="uid://c48k6k83qe63x" path="res://3rd Level.gd" id="1_pq7ed"]
+[ext_resource type="PackedScene" uid="uid://d0j40aap4ruua" path="res://text_box.tscn" id="2_mbisa"]
+[ext_resource type="Script" uid="uid://b3ft2aa045ics" path="res://text_box3.gd" id="3_pq7ed"]
+[ext_resource type="FontFile" uid="uid://bd2wlqscdnh7y" path="res://VCR_OSD_MONO_1.001.ttf" id="4_1cmky"]
+[ext_resource type="Script" uid="uid://bcilvdlisr81v" path="res://correct_answer.gd" id="5_1rvsj"]
+[ext_resource type="Script" uid="uid://bn53d8prohncj" path="res://wrong_answer.gd" id="6_ffg0f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgbuo"]
 bg_color = Color(0.4092, 0.66, 0.58475995, 1)
@@ -30,11 +30,11 @@ expand_margin_top = 12.0
 expand_margin_right = 10.0
 expand_margin_bottom = 12.0
 
-[node name="2NdLevel" type="Node2D" unique_id=822850178]
-script = ExtResource("1_iyrrg")
+[node name="3rdLevel" type="Node2D" unique_id=822850178]
+script = ExtResource("1_pq7ed")
 
-[node name="TextBox" parent="." unique_id=673858522 instance=ExtResource("1_xra66")]
-script = ExtResource("2_iyrrg")
+[node name="TextBox" parent="." unique_id=673858522 instance=ExtResource("2_mbisa")]
+script = ExtResource("3_pq7ed")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=750486084]
 offset_left = 324.00003
@@ -46,19 +46,19 @@ theme_override_constants/separation = 60
 
 [node name="Correct_Answer" type="Button" parent="HBoxContainer" unique_id=498052230]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_ebuch")
+theme_override_fonts/font = ExtResource("4_1cmky")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_sgbuo")
 text = "HE'S DREAMING!"
-script = ExtResource("5_qwsm5")
+script = ExtResource("5_1rvsj")
 
 [node name="Wrong_Answer" type="Button" parent="HBoxContainer" unique_id=1154458170]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_ebuch")
+theme_override_fonts/font = ExtResource("4_1cmky")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_udrw8")
 text = "HE'S A 100% AWAKE"
-script = ExtResource("6_3dj7h")
+script = ExtResource("6_ffg0f")
 
 [connection signal="pressed" from="HBoxContainer/Correct_Answer" to="." method="_on_correct_answer_pressed"]
 [connection signal="pressed" from="HBoxContainer/Wrong_Answer" to="." method="_on_wrong_answer_pressed"]

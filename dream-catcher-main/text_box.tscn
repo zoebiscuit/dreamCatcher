@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jekshew57xks" path="res://text_box.gd" id="1_d0rgj"]
 [ext_resource type="Texture2D" uid="uid://4xdxpayldnud" path="res://dream_txtbox_template.png" id="2_5tto5"]
-[ext_resource type="Texture2D" uid="uid://clvs4c735dklb" path="res://bed_bg_elements.png" id="2_74mx6"]
+[ext_resource type="Texture2D" uid="uid://naq32ojmbnkj" path="res://bedroom_mc.png" id="2_f0u0k"]
 [ext_resource type="Texture2D" uid="uid://jjty8natwau8" path="res://family_photo_dream.png" id="3_f0u0k"]
 [ext_resource type="FontFile" uid="uid://bd2wlqscdnh7y" path="res://VCR_OSD_MONO_1.001.ttf" id="3_polir"]
 [ext_resource type="Texture2D" uid="uid://buok2mhttxrhl" path="res://ricky_smile.png" id="4_polir"]
@@ -51,7 +51,7 @@ script = ExtResource("1_d0rgj")
 [node name="background" type="TextureRect" parent="." unique_id=1246840857]
 offset_right = 1109.3334
 offset_bottom = 649.0
-texture = ExtResource("2_74mx6")
+texture = ExtResource("2_f0u0k")
 expand_mode = 3
 
 [node name="family_photo" type="TextureRect" parent="." unique_id=93339532]
@@ -86,13 +86,14 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=636730808]
-offset_left = 132.00002
-offset_top = 379.0
-offset_right = 212.91109
-offset_bottom = 412.0
+offset_left = 162.00002
+offset_top = 386.99997
+offset_right = 242.91109
+offset_bottom = 419.99997
 scale = Vector2(1.3568455, 1.326671)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_polir")
+bbcode_enabled = true
 
 [node name="A" type="AnimationPlayer" parent="." unique_id=1280434204]
 libraries/ = SubResource("AnimationLibrary_polir")
