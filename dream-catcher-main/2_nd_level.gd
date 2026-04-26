@@ -36,6 +36,7 @@ func _ready() -> void:
 	await talk("Ricky", "Eh, I'm okay this morning.")
 	$TextBox/ricky.texture = load("res://mom_cop_ehh.png")
 	await talk("Mom","I just got home from the police station. Ugh it was exhausting today.")
+	$TextBox/ricky.texture = load("res://mom_cop_ehh.png")
 	await talk("Mom","But its refreshing to know you're okay.")
 	$TextBox/ricky.texture = load("res://ricky_wow.png")
 	await talk("Ricky","Aww, thanks. But you said you worked at the police station?")

@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bd2wlqscdnh7y" path="res://VCR_OSD_MONO_1.001.ttf" id="4_1cmky"]
 [ext_resource type="Script" uid="uid://bcilvdlisr81v" path="res://correct_answer.gd" id="5_1rvsj"]
 [ext_resource type="Script" uid="uid://bn53d8prohncj" path="res://wrong_answer.gd" id="6_ffg0f"]
+[ext_resource type="AudioStream" uid="uid://31w068ko5fmx" path="res://851418__gregorquendel__atmospheric-space-bells-soundscape.mp3" id="7_mbisa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgbuo"]
 bg_color = Color(0.4092, 0.66, 0.58475995, 1)
@@ -59,6 +60,10 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_udrw8")
 text = "HE'S A 100% AWAKE"
 script = ExtResource("6_ffg0f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=825517670]
+stream = ExtResource("7_mbisa")
+autoplay = true
 
 [connection signal="pressed" from="HBoxContainer/Correct_Answer" to="." method="_on_correct_answer_pressed"]
 [connection signal="pressed" from="HBoxContainer/Wrong_Answer" to="." method="_on_wrong_answer_pressed"]

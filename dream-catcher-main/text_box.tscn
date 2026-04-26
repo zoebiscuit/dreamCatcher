@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bd2wlqscdnh7y" path="res://VCR_OSD_MONO_1.001.ttf" id="3_polir"]
 [ext_resource type="Texture2D" uid="uid://buok2mhttxrhl" path="res://ricky_smile.png" id="4_polir"]
 [ext_resource type="AudioStream" uid="uid://bx7imij2ve5ma" path="res://322744__pfranzen__loud-bunny-rabbit-snoring.mp3" id="7_f0u0k"]
+[ext_resource type="AudioStream" uid="uid://31w068ko5fmx" path="res://851418__gregorquendel__atmospheric-space-bells-soundscape.mp3" id="8_7udc0"]
 
 [sub_resource type="Animation" id="Animation_d0rgj"]
 length = 0.001
@@ -109,3 +110,7 @@ stretch_mode = 4
 
 [node name="bunny_noise" type="AudioStreamPlayer" parent="." unique_id=635655926]
 stream = ExtResource("7_f0u0k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2021014479]
+stream = ExtResource("8_7udc0")
+autoplay = true
