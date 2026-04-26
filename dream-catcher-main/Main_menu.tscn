@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://c3taamrfdk4hf"]
 
 [ext_resource type="Script" uid="uid://cx7np86aca21q" path="res://main_menu.gd" id="1_b07fi"]
-[ext_resource type="Texture2D" uid="uid://2h7lr4ivrpvo" path="res://background.jpg" id="2_x6lt7"]
+[ext_resource type="AudioStream" uid="uid://kejsw3ttn4ao" path="res://847024__billyguiro__dreamy-acid-guitar-sample-104bpm-2.mp3" id="2_5kukc"]
+[ext_resource type="Texture2D" uid="uid://bxkp884v34ukf" path="res://dreamCatcher-main/background.png" id="2_rlxw3"]
+[ext_resource type="FontFile" uid="uid://bq1p07hefhlx1" path="res://SourceCodePro-Black.ttf" id="3_rlxw3"]
 [ext_resource type="FontFile" uid="uid://cdacv78p0mfeh" path="res://KiwiSoda.ttf" id="3_x2ps0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6lt7"]
-texture = ExtResource("2_x6lt7")
-modulate_color = Color(0.34384766, 0.34384766, 0.34384766, 1)
+texture = ExtResource("2_rlxw3")
+modulate_color = Color(0.34409294, 0.34409294, 0.34409294, 0.86700004)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ps0"]
-bg_color = Color(0.9093294, 0.432765, 0.56940794, 0.96700007)
+bg_color = Color(0.9043261, 0.43146813, 0.5684909, 0.96900004)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -66,6 +68,10 @@ grow_vertical = 2
 scale = Vector2(1.041173, 1.0524566)
 script = ExtResource("1_b07fi")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1907466878]
+stream = ExtResource("2_5kukc")
+autoplay = true
+
 [node name="Panel" type="Panel" parent="." unique_id=369073795]
 layout_mode = 1
 anchors_preset = -1
@@ -98,7 +104,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.029086268, 0.029086268, 0.029086264, 1)
 theme_override_constants/h_separation = 30
-theme_override_fonts/font = ExtResource("3_x2ps0")
+theme_override_fonts/font = ExtResource("3_rlxw3")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_x2ps0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rlxw3")
@@ -109,7 +115,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.029086268, 0.029086268, 0.029086264, 1)
 theme_override_constants/h_separation = 30
-theme_override_fonts/font = ExtResource("3_x2ps0")
+theme_override_fonts/font = ExtResource("3_rlxw3")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_b07fi")
 text = "OPTIONS"
@@ -119,7 +125,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.029086268, 0.029086268, 0.029086264, 1)
 theme_override_constants/h_separation = 30
-theme_override_fonts/font = ExtResource("3_x2ps0")
+theme_override_fonts/font = ExtResource("3_rlxw3")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_x6lt7")
 text = "EXIT"
@@ -130,8 +136,9 @@ offset_left = -109.49185
 offset_top = -244.1906
 offset_right = 465.50815
 offset_bottom = -106.417725
+theme_override_colors/font_color = Color(18.326208, 18.326208, 18.326208, 1)
 theme_override_fonts/font = ExtResource("3_x2ps0")
-theme_override_font_sizes/font_size = 58
+theme_override_font_sizes/font_size = 60
 text = "DREAM CATCHER"
 horizontal_alignment = 1
 vertical_alignment = 1
