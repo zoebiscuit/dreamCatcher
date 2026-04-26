@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://co2rjo58hhcsj" path="res://1_st_level.gd" id="1_i8n5i"]
 [ext_resource type="AudioStream" uid="uid://31w068ko5fmx" path="res://851418__gregorquendel__atmospheric-space-bells-soundscape.mp3" id="2_nfjfu"]
+[ext_resource type="PackedScene" uid="uid://d0j40aap4ruua" path="res://text_box.tscn" id="3_hc3b0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhgy2"]
 bg_color = Color(0.78, 0.5772, 0.468, 1)
@@ -56,3 +57,6 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_i8n5i")
 text = "HE'S DREAMING!"
 script = SubResource("GDScript_i8n5i")
+
+[node name="TextBox" parent="." unique_id=673858522 instance=ExtResource("3_hc3b0")]
+position = Vector2(1, -4)

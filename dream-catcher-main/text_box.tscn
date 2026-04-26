@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://d0j40aap4ruua"]
+
+[ext_resource type="Script" uid="uid://jekshew57xks" path="res://text_box.gd" id="1_d0rgj"]
+[ext_resource type="Texture2D" uid="uid://4xdxpayldnud" path="res://dream_txtbox_template.png" id="2_5tto5"]
+[ext_resource type="Texture2D" uid="uid://clvs4c735dklb" path="res://bed_bg_elements.png" id="2_74mx6"]
+[ext_resource type="Texture2D" uid="uid://jjty8natwau8" path="res://family_photo_dream.png" id="3_f0u0k"]
+[ext_resource type="FontFile" uid="uid://bd2wlqscdnh7y" path="res://VCR_OSD_MONO_1.001.ttf" id="3_polir"]
+[ext_resource type="Texture2D" uid="uid://buok2mhttxrhl" path="res://ricky_smile.png" id="4_polir"]
+[ext_resource type="AudioStream" uid="uid://bx7imij2ve5ma" path="res://322744__pfranzen__loud-bunny-rabbit-snoring.mp3" id="7_f0u0k"]
+
+[sub_resource type="Animation" id="Animation_d0rgj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Message:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5tto5"]
+resource_name = "typing"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Message:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_polir"]
+_data = {
+&"RESET": SubResource("Animation_d0rgj"),
+&"typing": SubResource("Animation_5tto5")
+}
+
+[node name="TextBox" type="Node2D" unique_id=673858522]
+script = ExtResource("1_d0rgj")
+
+[node name="background" type="TextureRect" parent="." unique_id=1246840857]
+offset_right = 1109.3334
+offset_bottom = 649.0
+texture = ExtResource("2_74mx6")
+expand_mode = 3
+
+[node name="family_photo" type="TextureRect" parent="." unique_id=93339532]
+offset_left = 28.0
+offset_top = -48.0
+offset_right = 1274.0
+offset_bottom = 549.0
+texture = ExtResource("3_f0u0k")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="image" type="TextureRect" parent="." unique_id=2005931230]
+offset_left = 54.0
+offset_top = 28.0
+offset_right = 1974.0
+offset_bottom = 1108.0
+scale = Vector2(0.5406562, 0.5406562)
+texture = ExtResource("2_5tto5")
+
+[node name="Message" type="RichTextLabel" parent="." unique_id=1388169835]
+offset_left = 135.0
+offset_top = 457.00003
+offset_right = 455.88208
+offset_bottom = 518.89325
+scale = Vector2(1.5769035, 1.4211029)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_polir")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 8
+text = "hdcfjgvhbytcfjv"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Name" type="RichTextLabel" parent="." unique_id=636730808]
+offset_left = 132.00002
+offset_top = 379.0
+offset_right = 212.91109
+offset_bottom = 412.0
+scale = Vector2(1.3568455, 1.326671)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_polir")
+
+[node name="A" type="AnimationPlayer" parent="." unique_id=1280434204]
+libraries/ = SubResource("AnimationLibrary_polir")
+
+[node name="ricky" type="TextureRect" parent="." unique_id=743490548]
+offset_left = 286.0
+offset_top = 167.0
+offset_right = 1226.0
+offset_bottom = 611.0
+texture = ExtResource("4_polir")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="bunny_noise" type="AudioStreamPlayer" parent="." unique_id=635655926]
+stream = ExtResource("7_f0u0k")
