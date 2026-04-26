@@ -11,7 +11,7 @@ texture = ExtResource("2_rlxw3")
 modulate_color = Color(0.34409294, 0.34409294, 0.34409294, 0.86700004)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2ps0"]
-bg_color = Color(0.9093294, 0.432765, 0.56940794, 0.96700007)
+bg_color = Color(0.9043261, 0.43146813, 0.5684909, 0.96900004)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -136,8 +136,9 @@ offset_left = -109.49185
 offset_top = -244.1906
 offset_right = 465.50815
 offset_bottom = -106.417725
+theme_override_colors/font_color = Color(18.326208, 18.326208, 18.326208, 1)
 theme_override_fonts/font = ExtResource("3_x2ps0")
-theme_override_font_sizes/font_size = 58
+theme_override_font_sizes/font_size = 60
 text = "DREAM CATCHER"
 horizontal_alignment = 1
 vertical_alignment = 1
