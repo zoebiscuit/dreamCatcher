@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cmulk25k3lajw"]
+
+[ext_resource type="PackedScene" uid="uid://xf7t6sietjr8" path="res://text_box.tscn" id="1_i8n5i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhgy2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhgy2"]
+bg_color = Color(0.78, 0.5772, 0.468, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 9
+expand_margin_left = 10.0
+expand_margin_top = 12.0
+expand_margin_right = 10.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8n5i"]
+bg_color = Color(0.4092, 0.66, 0.58475995, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 10.0
+expand_margin_top = 12.0
+expand_margin_right = 10.0
+expand_margin_bottom = 12.0
+
+[node name="1StLevel" type="Node2D" unique_id=146290594]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=183262486]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=944981714]
+sprite_frames = SubResource("SpriteFrames_bhgy2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1944076997]
+offset_left = 57.0
+offset_top = 466.0
+offset_right = 393.0
+offset_bottom = 610.0
+theme_override_constants/separation = 60
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=2031849925]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhgy2")
+text = "HE'S A 100% AWAKE"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1316160217]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8n5i")
+text = "HE'S DREAMING!"
+
+[node name="TextBox" parent="." unique_id=673858522 instance=ExtResource("1_i8n5i")]
